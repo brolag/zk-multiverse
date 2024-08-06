@@ -3,7 +3,7 @@ import { Letter } from "./Letter";
 const ZKMultiverseLogo = () => {
   const title = "ZK MULTIVERSE";
   return (
-    <div className="flex flex-row space-x-3">
+    <div className="flex flex-row space-x-3 mb-20">
       {title
         .split("")
         .map((letter, index) =>
