@@ -1,3 +1,4 @@
+import { Play } from "next/font/google";
 import "@rainbow-me/rainbowkit/styles.css";
 import { ScaffoldEthAppWithProviders } from "~~/components/ScaffoldEthAppWithProviders";
 import { ThemeProvider } from "~~/components/ThemeProvider";
@@ -5,13 +6,22 @@ import "~~/styles/globals.css";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
 export const metadata = getMetadata({
-  title: "Scaffold-ETH 2 App",
-  description: "Built with 🏗 Scaffold-ETH 2",
+  title: "Zk Multiverse",
+  description: "Learn ZK with ZK Multiverse",
 });
+
+// Configure it for using with tailwindcss
+
+const play = Play({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-play",
+} as any);
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html suppressHydrationWarning>
+    <html className={`${(play as any).variable}`} suppressHydrationWarning>
       <body className="bg-local" style={{ backgroundImage: "url(/images/bg.jpg)" }}>
         <ThemeProvider enableSystem>
           <ScaffoldEthAppWithProviders>{children}</ScaffoldEthAppWithProviders>
