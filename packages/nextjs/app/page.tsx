@@ -32,7 +32,6 @@ const Home: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10">
         <div>
           <ZKMultiverseLogo />
-
           <div className="flex flex-row justify-between items-start space-x-10">
             {worlds.map((world, index) => (
               <div key={index} className="relative">

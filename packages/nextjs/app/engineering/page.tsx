@@ -9,12 +9,12 @@ const languages = [
   {
     title: "Circom",
     image: "/images/languages/circom.png",
-    link: "/circom",
+    link: "/engineering/circom",
   },
   {
     title: "Noir",
     image: "/images/languages/noir.png",
-    link: "/noir",
+    link: "/engineering/noir",
   },
 ];
 
