@@ -1,28 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
+import { chunkArray } from "~~/utils/chunkArray";
 
-const steps = [
-  { id: 1, title: "Step 1" },
-  { id: 2, title: "Step 2" },
-  { id: 3, title: "Step 3" },
-  { id: 4, title: "Step 4" },
-  { id: 5, title: "Step 5" },
-  { id: 6, title: "Step 6" },
+const challenges = [
+  { id: 1, title: "Challenge #1" },
+  { id: 2, title: "Challenge #2" },
+  { id: 3, title: "Challenge #3" },
+  { id: 4, title: "Challenge #4" },
+  { id: 5, title: "Challenge #5" },
+  { id: 6, title: "Challenge #6" },
 ];
 
-const chunkArray = (array: any[], size: number) => {
-  const result = [];
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
-  }
-  return result;
-};
-
 const Home: NextPage = () => {
-  const rows = chunkArray(steps, 3);
+  const rows = chunkArray(challenges, 3);
 
   return (
     <>
@@ -32,7 +25,7 @@ const Home: NextPage = () => {
             {row.map((step, index) => {
               const isLocked = step.id > 3;
               return (
-                <React.Fragment key={step.id}>
+                <Fragment key={step.id}>
                   <div className={`flex flex-col items-center mx-4 ${isLocked ? "opacity-50" : ""}`}>
                     <div className="flex flex-row text-center items-center font-play text-3xl">
                       {step.title}
@@ -52,7 +45,7 @@ const Home: NextPage = () => {
                     />
                   </div>
                   {index < row.length - 1 && <div className="line-glow w-16 h-px mx-4"></div>}
-                </React.Fragment>
+                </Fragment>
               );
             })}
           </div>

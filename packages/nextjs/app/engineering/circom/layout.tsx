@@ -9,7 +9,7 @@ export const metadata = getMetadata({
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="bg-local h-screen bg-repeat	" style={{ backgroundImage: "url(/images/inner-bg.png)" }}>
+    <section className="bg-local h-screen bg-repeat" style={{ backgroundImage: "url(/images/inner-bg.png)" }}>
       {children}
     </section>
   );

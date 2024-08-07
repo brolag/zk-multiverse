@@ -1,0 +1,20 @@
+[
+  {
+    "step": "Step 1",
+    "description": "Install the necessary dependencies for Circom.",
+    "commands": ["npm install -g circom"],
+    "files": ["circom-dependencies.txt"]
+  },
+  {
+    "step": "Step 2",
+    "description": "Clone the Circom repository from GitHub.",
+    "commands": ["git clone https://github.com/iden3/circom.git"],
+    "files": ["circom-repo-clone.txt"]
+  },
+  {
+    "step": "Step 3",
+    "description": "Navigate to the Circom directory and build the project.",
+    "commands": ["cd circom", "make"],
+    "files": ["circom-build.txt"]
+  }
+]
