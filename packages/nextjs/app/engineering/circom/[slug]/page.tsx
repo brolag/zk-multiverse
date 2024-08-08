@@ -10,7 +10,7 @@ type PageProps = {
 };
 
 const getSteps = async (slug: string) => {
-  const filePath = path.join(process.cwd(), "challenges", `challenge_${slug}.json`);
+  const filePath = path.join(process.cwd(), "challenges", `challenge_${slug}/steps.json`);
   const jsonData = await fs.readFile(filePath, "utf-8");
   const data = JSON.parse(jsonData);
 
@@ -39,7 +39,7 @@ export default async function Page({ params }: PageProps) {
               <div>
                 <p>{item.description}</p>
                 <pre>{item.commands.join("\n")}</pre>
-                <a href={`/challenges/${item.downloadableFile}`} download>
+                <a href={`/challenges/challenge_${item.downloadableFile}/files/download.circom`} download>
                   {item.downloadableFile}
                 </a>
               </div>
