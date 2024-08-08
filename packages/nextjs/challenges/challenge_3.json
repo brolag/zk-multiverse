@@ -1,0 +1,46 @@
+[
+    {
+      "step": "Step 1",
+      "description": ["Create the circuit in Circom (Knightsknaves.circom)"],
+      "commands": [""],
+      "files":["../../../../package/circuits/KnightsKnaves.circom"]
+    },
+    {
+      "step": "Step 2",
+      "description": "Compiles the Circom circuit into the necessary formats for execution and debugging.",
+      "commands": ["circom Knightsknaves.circom --r1cs --wasm --sym"]
+    },
+    {
+      "step": "Step 3",
+      "description": "These commands initialize and contribute to the Powers of Tau ceremony, which is essential for setting up zk-SNARKs. The first command starts the ceremony, the second adds a contribution, and the third prepares the final output for use in zk-SNARK proving and verification.",
+      "commands": ["snarkjs powersoftau new bn128 12 pot12_0000.ptau -v", "snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name='First contribution' -v", "snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v"]
+    },
+    {
+      "step": "Step 4",
+      "description": "These commands set up and finalize the zk-SNARK proving and verification keys. The first command initializes the setup using the circuit and Powers of Tau files, the second command adds a contribution to the proving key, and the third command exports the verification key for use in verifying proofs.",
+      "commands": ["snarkjs groth16 setup knightsknaves.r1cs pot12_final.ptau knightsknaves_0000.zkey", "snarkjs zkey contribute knightsknaves_0000.zkey knightsknaves_0001.zkey --name='1st Contributor Name' -v", "snarkjs zkey export verificationkey knightsknaves_0001.zkey verification_key.json"]
+    },
+    {
+      "step": "Step 5",
+      "description": "This command exports a Solidity smart contract that can verify zk-SNARK proofs.",
+      "commands": ["snarkjs zkey export solidityverifier knightsknaves_0001.zkey verifier.sol"]
+    },
+    {
+      "step": "Step 6",
+      "description": ["Deploy the verifier contract. This can be done using Remix."],
+      "commands": [""]
+    },
+    {
+      "step": "Step 7",
+      "description": "Create a custom smart contract to interact with 'verifier.sol'.",
+      "commands": [""],
+      "files": ""
+    },
+    {
+      "step": "Step 8",
+      "description": "Create a Javascript file to call the custom smart contract and verify the proof.",
+      "commands": [""],
+      "files": ""      
+    }    
+  ]
+  
