@@ -2,6 +2,7 @@
 
 import React, { Fragment } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { NextPage } from "next";
 import { chunkArray } from "~~/utils/chunkArray";
 
@@ -19,15 +20,17 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center flex-col flex-grow mt-40">
+      <div className="flex items-center justify-items-stretch flex-col flex-grow mt-40">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex flex-row items-center mb-8">
             {row.map((step, index) => {
               const isLocked = step.id > 3;
-              return (
-                <Fragment key={step.id}>
-                  <div className={`flex flex-col items-center mx-4 ${isLocked ? "opacity-50" : ""}`}>
-                    <div className="flex flex-row text-center items-center font-play text-3xl">
+              const content = (
+                <div className={`flex flex-col items-center mx-4 ${isLocked ? "opacity-50" : ""} group`}>
+                  <div className="flex flex-col items-center">
+                    <div
+                      className={`flex flex-row text-center items-center font-play text-3xl cursor-pointer ${!isLocked && "group-hover:glow-title"}`}
+                    >
                       {step.title}
                       {isLocked && (
                         <Image
@@ -41,9 +44,21 @@ const Home: NextPage = () => {
                     </div>
                     <div
                       style={{ backgroundImage: "url(/images/step.png)" }}
-                      className={`bg-local flex flex-row justify-around items-start w-40 h-40 bg-cover ${isLocked ? "grayscale" : ""}`}
+                      className={`bg-local flex flex-row justify-around items-start w-40 h-40 bg-cover ${isLocked ? "grayscale" : "transition-transform duration-300 group-hover:scale-105"}`}
                     />
                   </div>
+                </div>
+              );
+
+              return (
+                <Fragment key={step.id}>
+                  {isLocked ? (
+                    content
+                  ) : (
+                    <Link href={`/engineering/circom/${step.id}`} passHref>
+                      {content}
+                    </Link>
+                  )}
                   {index < row.length - 1 && <div className="line-glow w-16 h-px mx-4"></div>}
                 </Fragment>
               );
@@ -52,12 +67,8 @@ const Home: NextPage = () => {
         ))}
       </div>
       <style jsx>{`
-        .line-glow {
-          background-color: white;
-          box-shadow: 0 0 10px 2px white;
-        }
-        .grayscale {
-          filter: grayscale(100%);
+        .group:hover .group-hover\:glow-title {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
       `}</style>
     </>

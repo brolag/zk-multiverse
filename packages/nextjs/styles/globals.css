@@ -30,3 +30,11 @@ p {
 .btn.btn-ghost {
   @apply shadow-none;
 }
+
+.line-glow {
+  background-color: white;
+  box-shadow: 0 0 10px 2px white;
+}
+.grayscale {
+  filter: grayscale(100%);
+}
