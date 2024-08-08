@@ -22,23 +22,14 @@
     },
     {
       "step": "Step 5",
-      "description": "Create an input file named input.json, containing the inputs required for your circuit. This file should be in JSON format.",
+      "description": "Create an HTML file named index, and enter the selected values for character A and character B.",
       "commands": [""],
-      "files":""
+      "files":"index.html"
     },
     {
       "step": "Step 6",
-      "description": ["This command generates the witness.wtns file by processing the inputs through the WebAssembly representation of the circuit."],
-      "commands": ["snarkjs wtns calculate knightsknaves_js/knightsknaves.wasm input.json witness.wtns"]
-    },
-    {
-      "step": "Step 7",
-      "description": "This command generates a zero-knowledge proof (proof.json) using the witness data (witness.wtns) and proving key (knightsknaves_0000.zkey), and outputs the public signals (public.json).",
-      "commands": ["snarkjs plonk prove knightsknaves_0000.zkey witness.wtns proof.json public.json"]
-    },
-    {
-      "step": "Step 8",
-      "description": "The command verifies a zero-knowledge proof (proof.json) using the verification key (verification_key.json) and public signals (public.json).",
-      "commands": ["snarkjs plonk verify verification_key.json public.json proof.json"]
-    }    
+      "description": ["Create a JavaScript file that receives the selected values and performs the test verification.."],
+      "commands": [""],
+      "files":"verifyProofPlonk.js"      
+    }
   ]

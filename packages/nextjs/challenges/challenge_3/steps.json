@@ -34,7 +34,7 @@
       "step": "Step 7",
       "description": "Create a custom smart contract to interact with 'verifier.sol'.",
       "commands": [""],
-      "files": ""
+      "files": "CircomCustomLogic.sol"
     },
     {
       "step": "Step 8",
