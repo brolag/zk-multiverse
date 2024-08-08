@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Character Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    select, input[type="button"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    input[type="button"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+    #resultMessage {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }    
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <label for="character1">Choose a character A:</label>
+    <select id="character1" name="character1">
+        <option value="1">Knight</option>
+        <option value="0">Knave</option>
+    </select>
+
+    <label for="character2">Choose a character B:</label>
+    <select id="character2" name="character2">
+        <option value="1">Knight</option>
+        <option value="0">Knave</option>
+    </select>
+
+    <input type="button" value="Send Proof" onclick="_sendProof()">
+
+    <p id="resultMessage"></p>
+
+  </div>
+
+  <script type="text/javascript" src="verifyProofPlonk.js"></script>
+  <script type="text/javascript" src="snarkjs.min.js"></script>
+  <script>
+    async function _sendProof() {
+      const A_is_knight = document.getElementById("character1").value;
+      const B_is_knight = document.getElementById("character2").value;
+      const result = await generateAndVerifyProof(A_is_knight, B_is_knight);
+
+      console.log(result);
+
+      // Displaying result message
+      const resultMessage = document.getElementById("resultMessage");
+      resultMessage.textContent = result ? "Proof successful!" : "Proof failed. Please try again.";
+
+    }
+  </script>
+</body>
+</html>

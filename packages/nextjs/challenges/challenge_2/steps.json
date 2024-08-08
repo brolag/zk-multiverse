@@ -24,7 +24,7 @@
       "step": "Step 5",
       "description": "Create an input file named input.json, containing the inputs required for your circuit. This file should be in JSON format.",
       "commands": [""],
-      "files":""
+      "files":["input.json",""]
     },
     {
       "step": "Step 6",
