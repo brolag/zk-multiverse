@@ -26,7 +26,7 @@
   },
   {
     "step": "Step 6",
-    "description": "Install snarkjs. Snarkjs is a npm package that contains code to generate and validate ZK proofs from the artifacts produced by circom",
+    "description": "Install snarkjs. Snarkjs is a npm package that contains code to generate and validate ZK proofs from the artifacts produced by circom.",
     "commands": ["npm install -g snarkjs"]
   }  
 ]
