@@ -30,13 +30,14 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="flex items-center flex-col flex-grow pt-10">
+        <ZKMultiverseLogo />
+
         <div>
-          <ZKMultiverseLogo />
-          <div className="flex flex-row justify-between items-start space-x-10">
+          <div className="flex flex-row justify-between items-start space-x-24">
             {worlds.map((world, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="flex flex-col items-stretch justify-center">
                 {world.disabled ? (
-                  <div className="w-24 mb-10 cursor-not-allowed relative">
+                  <div className="w-56 mb-20 cursor-not-allowed relative">
                     <Image
                       src={world.image}
                       alt={world.title}
@@ -50,7 +51,7 @@ const Home: NextPage = () => {
                   </div>
                 ) : (
                   <Link href={world.link}>
-                    <div className="w-24 mb-10 cursor-pointer">
+                    <div className="w-56 mb-20 cursor-pointer">
                       <Image
                         src={world.image}
                         alt={world.title}
@@ -61,7 +62,7 @@ const Home: NextPage = () => {
                     </div>
                   </Link>
                 )}
-                <h2 className="text-lg text-center font-play">{world.title}</h2>
+                <h2 className="text-3xl text-center font-play">{world.title}</h2>
               </div>
             ))}
           </div>
