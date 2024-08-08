@@ -1,0 +1,44 @@
+[
+    {
+      "step": "Step 1",
+      "description": ["Create the circuit in Circom (Knightsknaves.circom)"],
+      "commands": [""],
+      "files":["../../../../package/circuits/KnightsKnaves.circom"]
+    },
+    {
+      "step": "Step 2",
+      "description": "Compiles the Circom circuit into the necessary formats for execution and debugging.",
+      "commands": ["circom Knightsknaves.circom --r1cs --wasm --sym"]
+    },
+    {
+      "step": "Step 3",
+      "description": "These commands initialize and contribute to the Powers of Tau ceremony, which is essential for setting up zk-SNARKs. The first command starts the ceremony, the second adds a contribution, and the third prepares the final output for use in zk-SNARK proving and verification.",
+      "commands": ["snarkjs powersoftau new bn128 12 pot12_0000.ptau -v", "snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name='First contribution' -v", "snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v"]
+    },
+    {
+      "step": "Step 4",
+      "description": "These commands set up and finalize the zk-SNARK proving and verification keys. The first command initializes the setup using the circuit and Powers of Tau files, the second command exports the verification key for use in verifying proofs.",
+      "commands": ["snarkjs plonk setup knightsknaves.r1cs pot12_final.ptau knightsknaves_0000.zkey", "snarkjs zkey export verificationkey knightsknaves_0000.zkey verification_key.json"]
+    },
+    {
+      "step": "Step 5",
+      "description": "Create an input file named input.json, containing the inputs required for your circuit. This file should be in JSON format.",
+      "commands": [""],
+      "files":""
+    },
+    {
+      "step": "Step 6",
+      "description": ["This command generates the witness.wtns file by processing the inputs through the WebAssembly representation of the circuit."],
+      "commands": ["snarkjs wtns calculate knightsknaves_js/knightsknaves.wasm input.json witness.wtns"]
+    },
+    {
+      "step": "Step 7",
+      "description": "This command generates a zero-knowledge proof (proof.json) using the witness data (witness.wtns) and proving key (knightsknaves_0000.zkey), and outputs the public signals (public.json).",
+      "commands": ["snarkjs plonk prove knightsknaves_0000.zkey witness.wtns proof.json public.json"]
+    },
+    {
+      "step": "Step 8",
+      "description": "The command verifies a zero-knowledge proof (proof.json) using the verification key (verification_key.json) and public signals (public.json).",
+      "commands": ["snarkjs plonk verify verification_key.json public.json proof.json"]
+    }    
+  ]
