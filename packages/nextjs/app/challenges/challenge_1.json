@@ -1,20 +1,32 @@
 [
   {
     "step": "Step 1",
-    "description": "Install the necessary dependencies for Circom.",
-    "commands": ["npm install -g circom"],
-    "files": ["circom-dependencies.txt"]
+    "description": ["Install the necessary dependencies for Circom."," (Node.js, NPM (Node Package Manager), Rust)"],
+    "commands": [""]
   },
   {
     "step": "Step 2",
     "description": "Clone the Circom repository from GitHub.",
-    "commands": ["git clone https://github.com/iden3/circom.git"],
-    "files": ["circom-repo-clone.txt"]
+    "commands": ["git clone https://github.com/iden3/circom.git"]
   },
   {
     "step": "Step 3",
     "description": "Navigate to the Circom directory and build the project.",
-    "commands": ["cd circom", "make"],
-    "files": ["circom-build.txt"]
-  }
+    "commands": ["cd circom", "cargo build --release"]
+  },
+  {
+    "step": "Step 4",
+    "description": "When the command successfully finishes, it generates the circom binary in the directory target/release. This command will install the circom binary in the directory $HOME/.cargo/bin.",
+    "commands": ["cargo install --path circom"]
+  },
+  {
+    "step": "Step 5",
+    "description": "To verify that Circom is correctly installed, run:",
+    "commands": ["circom --version"]
+  },
+  {
+    "step": "Step 6",
+    "description": "Install snarkjs. Snarkjs is a npm package that contains code to generate and validate ZK proofs from the artifacts produced by circom",
+    "commands": ["npm install -g snarkjs"]
+  }  
 ]
