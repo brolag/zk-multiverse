@@ -1,9 +1,11 @@
-[
+{
+  "title": "Knights and Knaves",
+  "steps": [
     {
       "step": "Step 1",
       "description": ["Create the circuit in Circom (Knightsknaves.circom)"],
       "commands": [""],
-      "files":[""]
+      "files": [""]
     },
     {
       "step": "Step 2",
@@ -13,23 +15,35 @@
     {
       "step": "Step 3",
       "description": "These commands initialize and contribute to the Powers of Tau ceremony, which is essential for setting up zk-SNARKs. The first command starts the ceremony, the second adds a contribution, and the third prepares the final output for use in zk-SNARK proving and verification.",
-      "commands": ["snarkjs powersoftau new bn128 12 pot12_0000.ptau -v", "snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name='First contribution' -v", "snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v"]
+      "commands": [
+        "snarkjs powersoftau new bn128 12 pot12_0000.ptau -v",
+        "snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name='First contribution' -v",
+        "snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v"
+      ]
     },
     {
       "step": "Step 4",
       "description": "These commands set up and finalize the zk-SNARK proving and verification keys. The first command initializes the setup using the circuit and Powers of Tau files, the second command adds a contribution to the proving key, and the third command exports the verification key for use in verifying proofs.",
-      "commands": ["snarkjs groth16 setup knightsknaves.r1cs pot12_final.ptau knightsknaves_0000.zkey", "snarkjs zkey contribute knightsknaves_0000.zkey knightsknaves_0001.zkey --name='1st Contributor Name' -v", "snarkjs zkey export verificationkey knightsknaves_0001.zkey verification_key.json"]
+      "commands": [
+        "snarkjs groth16 setup knightsknaves.r1cs pot12_final.ptau knightsknaves_0000.zkey",
+        "snarkjs zkey contribute knightsknaves_0000.zkey knightsknaves_0001.zkey --name='1st Contributor Name' -v",
+        "snarkjs zkey export verificationkey knightsknaves_0001.zkey verification_key.json"
+      ]
     },
     {
       "step": "Step 5",
       "description": "Create an input file named input.json, containing the inputs required for your circuit. This file should be in JSON format.",
       "commands": [""],
-      "files":["input.json",""]
+      "files": ["input.json", ""]
     },
     {
       "step": "Step 6",
-      "description": ["This command generates the witness.wtns file by processing the inputs through the WebAssembly representation of the circuit."],
-      "commands": ["node Knightsknaves_js/generate_witness.js Knightsknaves_js/Knightsknaves.wasm input.json witness.wtns"]
+      "description": [
+        "This command generates the witness.wtns file by processing the inputs through the WebAssembly representation of the circuit."
+      ],
+      "commands": [
+        "node Knightsknaves_js/generate_witness.js Knightsknaves_js/Knightsknaves.wasm input.json witness.wtns"
+      ]
     },
     {
       "step": "Step 7",
@@ -40,5 +54,7 @@
       "step": "Step 8",
       "description": "This command verifies a zk-SNARK proof using the specified verification key, public inputs/outputs, and proof file. It checks the validity of the proof and outputs whether it is valid or not.",
       "commands": ["snarkjs groth16 verify verification_key.json public.json proof.json"]
-    }    
+    }
   ]
+
+}
