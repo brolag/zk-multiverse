@@ -2,14 +2,6 @@ import { groth16 } from "snarkjs";
 
 export async function generateAndVerifyProof(a: number, b: number) {
   try {
-    // Mapping "Knight" and "Knave" to numeric values
-    // const roleMap = {
-    //   Knight: BigInt(1),
-    //   Knave: BigInt(0),
-    // } as Record<string, bigint>;
-
-    console.log(a, b);
-
     const input = {
       A_is_knight: a, // Ensure 'a' is either "Knight" or "Knave"
       B_is_knight: b, // Ensure 'b' is either "Knight" or "Knave"
@@ -17,8 +9,8 @@ export async function generateAndVerifyProof(a: number, b: number) {
 
     const { proof, publicSignals } = await groth16.fullProve(
       input,
-      "/challenges/challenge_2/files/Knightsknaves.wasm", // Ensure correct path
-      "/challenges/challenge_2/files/knightsknaves_0001.zkey", // Ensure correct path
+      "/challenges/challenge_2/files/Knightsknaves.wasm",
+      "/challenges/challenge_2/files/knightsknaves_0001.zkey",
     );
 
     const vKey = await fetch("/challenges/challenge_2/files/verification_key.json").then(response => response.json());

@@ -45,9 +45,9 @@ export default async function Page({ params }: PageProps) {
                 <p>{item.description}</p>
                 <pre>{item.commands.join("\n")}</pre>
                 {/* TODO: Adjust the downloadable files */}
-                <a href={`/challenges/challenge_${item.downloadableFile}/files/download.circom`} download>
+                {/* <a href={`/challenges/challenge_${item.downloadableFile}/files/download.circom`} download>
                   {item.downloadableFile}
-                </a>
+                </a> */}
               </div>
             }
           />
