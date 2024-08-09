@@ -1,80 +1,98 @@
-# 🏗 Scaffold-ETH 2
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+# **🚀ZK Multiverse: Embark on a Cryptographic Adventure🚀** 
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
-
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
-
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
-
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
-
-## Requirements
-
-Before you begin, you need to install the following tools:
-
-- [Node (>= v18.17)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
-
-## Quickstart
-
-To get started with Scaffold-ETH 2, follow the steps below:
-
-1. Install dependencies if it was skipped in CLI:
-
-```
-cd my-dapp-example
-yarn install
-```
-
-2. Run a local network in the first terminal:
-
-```
-yarn chain
-```
-
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/hardhat/hardhat.config.ts`.
-
-3. On a second terminal, deploy the test contract:
-
-```
-yarn deploy
-```
-
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
-
-4. On a third terminal, start your NextJS app:
-
-```
-yarn start
-```
-
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
-
-Run smart contract test with `yarn hardhat:test`
-
-- Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your deployment scripts in `packages/hardhat/deploy`
+![image](https://github.com/user-attachments/assets/be31349b-4a16-48c1-a91a-787b8ef9aab4)
 
 
-## Documentation
+Welcome to **ZK Multiverse**, where learning cryptography becomes an exciting journey through a universe filled with challenges, puzzles, and practical applications. This web game is designed to help developers master the art of building zk circuits using Circom or Noir while understanding the underlying cryptography and mathematical principles.
 
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
+## **Why ZK Multiverse?**
+
+Cryptography can be daunting, especially when most of the available resources focus on theoretical concepts with little emphasis on hands-on practice. ZK Multiverse aims to change that by providing an engaging and interactive learning environment.
+
+### **The Problem We Are Solving:**
+
+1. **Too Much Theory, Not Enough Practice**: Cryptography is often surrounded by complex theories with few practical examples. ZK Multiverse bridges this gap by offering practical, real-world scenarios where you can apply what you’ve learned.
+
+2. **Information Overload**: With so many cryptographic concepts and resources available, it’s easy for developers to get sidetracked or overwhelmed. ZK Multiverse guides you through a curated learning path, ensuring you stay focused and gain the essential skills needed to excel in zero-knowledge proof development.
+
+## **What You’ll Learn**
+
+- **Zero-Knowledge Circuits**: Gain practical experience in building zk circuits using Circom or Noir.
+- **Cryptography Fundamentals**: Understand the basics of cryptography, including essential concepts like encryption, decryption, hashing, and more.
+- **Mathematical Foundations**: Dive into the mathematical principles that underpin cryptographic techniques, with hands-on exercises to solidify your knowledge.
+
+## **How It Works**
+
+1. **Interactive Challenges**: Complete various challenges that simulate real-world cryptographic problems. Each challenge is designed to help you apply your knowledge in a practical context.
+
+2. **Guided Learning Path**: Follow a structured path that gradually increases in difficulty, ensuring you build your skills step-by-step without feeling overwhelmed.
+
+3. **Fun and Engaging**: ZK Multiverse transforms learning into an adventure, making the process enjoyable and memorable.
+
+## **Getting Started**
+
+To get started with ZK Multiverse, follow the steps below:
+
+1. **Clone the Repository**: Begin your journey by cloning this repository to your local machine.
+
+   \`\`\`bash
+   git clone https://github.com/yourusername/zk-multiverse.git
+   cd zk-multiverse
+   \`\`\`
+
+2. **Install Dependencies**: Install the required dependencies to run the game.
+
+   \`\`\`bash
+   yarn install
+   \`\`\`
+
+3. **Run a Local Network**: Start a local Ethereum network using Hardhat in the first terminal.
+
+   \`\`\`bash
+   yarn chain
+   \`\`\`
+
+4. **Deploy the Test Contract**: Deploy a test smart contract to the local network in a second terminal.
+
+   \`\`\`bash
+   yarn deploy
+   \`\`\`
+
+5. **Start Your NextJS App**: Launch the NextJS app in a third terminal.
+
+   \`\`\`bash
+   yarn start
+   \`\`\`
+
+   Visit your app on: \`http://localhost:3000\`. You can interact with your smart contract using the \`Debug Contracts\` page.
+
+6. **Run Smart Contract Tests**: Test your smart contracts using Hardhat.
+
+   \`\`\`bash
+   yarn hardhat:test
+   \`\`\`
+
+## **Contributing**
+
+We welcome contributions! Whether you’re adding new challenges, improving the existing codebase, or suggesting new features, your input is valuable.
+
+1. **Fork the Repository**: Create a fork of the repository on GitHub.
+
+2. **Create a Feature Branch**: Work on your feature in a new branch.
+
+   \`\`\`bash
+   git checkout -b feature-name
+   \`\`\`
+
+3. **Submit a Pull Request**: Once your feature is complete, submit a pull request for review.
+
+## **Feedback and Support**
+
+Have questions or need help? Join our [community forum](https://example.com) or open an issue on GitHub.
+
+## **Documentation**
+
+Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2, the toolkit used to build ZK Multiverse.
 
 To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Scaffold-ETH 2
-
-We welcome contributions to Scaffold-ETH 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
