@@ -38,8 +38,7 @@ To get started with ZK Multiverse, follow the steps below:
 
    ```bash
    git clone https://github.com/yourusername/zk-multiverse.git
-   cd zk-multiverse
-   '''
+   cd zk-multiverse```
 
 2. **Install Dependencies**: Install the required dependencies to run the game.
 
@@ -50,7 +49,8 @@ To get started with ZK Multiverse, follow the steps below:
 3. **Run a Local Network**: Start a local Ethereum network using Hardhat in the first terminal.
 
    ```bash
-   yarn chain```
+   yarn chain
+   ```
 
 4. **Deploy the Test Contract**: Deploy a test smart contract to the local network in a second terminal.
 
