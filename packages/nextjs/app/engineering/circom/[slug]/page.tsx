@@ -16,7 +16,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div className="flex items-center flex-col w-full pt-10">
-      <div className="w-full max-w-[64rem] p-4 bg-gray-800 rounded-lg">
+      <div className="w-full max-w-[67rem] p-4 bg-gray-800 rounded-lg">
         <div className="flex items-center mb-4">
           <Image src="/images/mission.png" alt="Mission" width={40} height={40} className="mr-2" />
           <h2 className="text-3xl font-play font-bold text-white">
@@ -45,7 +45,7 @@ export default async function Page({ params }: PageProps) {
                 <p>{item.description}</p>
                 <pre>{item.commands.join("\n")}</pre>
                 {/* TODO: Adjust the downloadable files */}
-                {/* <a href={/challenges/challenge_${item.downloadableFile}/files/download.circom} download>
+                {/* <a href={`/challenges/challenge_${item.downloadableFile}/files/download.circom`} download>
                   {item.downloadableFile}
                 </a> */}
               </div>
