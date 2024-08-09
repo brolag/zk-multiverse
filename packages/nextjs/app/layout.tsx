@@ -10,8 +10,6 @@ export const metadata = getMetadata({
   description: "Learn ZK with ZK Multiverse",
 });
 
-// Configure it for using with tailwindcss
-
 const play = Play({
   weight: "400",
   subsets: ["latin"],
@@ -21,7 +19,11 @@ const play = Play({
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html className={`${(play as any).variable}`} suppressHydrationWarning>
+    <html
+      style={{ backgroundImage: "url(/images/inner-bg.png)" }}
+      className={`bg-local h-screen bg-repeat ${(play as any).variable}`}
+      suppressHydrationWarning
+    >
       <body className="bg-local" style={{ backgroundImage: "url(/images/bg.jpg)" }}>
         <ThemeProvider enableSystem>
           <ScaffoldEthAppWithProviders>{children}</ScaffoldEthAppWithProviders>

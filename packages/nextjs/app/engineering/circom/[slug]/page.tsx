@@ -1,21 +1,13 @@
 import Image from "next/image";
-import fs from "fs/promises";
-import path from "path";
+import Statement from "~~/components/Statement";
 import Verifier from "~~/components/Verifier";
 import AccordionItem from "~~/components/ui/AccordionItem";
+import { getSteps } from "~~/utils/getStep";
 
 type PageProps = {
   params: {
     slug: string;
   };
-};
-
-const getSteps = async (slug: string) => {
-  const filePath = path.join(process.cwd(), "challenges", `challenge_${slug}/steps.json`);
-  const jsonData = await fs.readFile(filePath, "utf-8");
-  const data = JSON.parse(jsonData);
-
-  return data;
 };
 
 export default async function Page({ params }: PageProps) {
@@ -32,24 +24,14 @@ export default async function Page({ params }: PageProps) {
           </h2>
         </div>
 
-        <div className="w-full max-w-[64rem] p-4 bg-gray-700 rounded-lg mb-6 font-play shadow-lg">
-          <div className="mb-4">
-            <h3 className="text-white text-xl font-bold">Statements</h3>
-            <ul className="text-gray-300">
-              <li>- Knights always tell the truth.</li>
-              <li>- Knaves always lie.</li>
-            </ul>
-          </div>
-          <div className="mb-4">
-            <p className="text-gray-300">Character A: B is a knave.</p>
-            <p className="text-gray-300">Character B: A and I are of opposite types.</p>
-          </div>
-        </div>
-
-        <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)]" />
-
-        {params.slug !== "1" && <Verifier />}
-        <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)] mb-10" />
+        {params.slug !== "1" && (
+          <>
+            <Statement />
+            <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)]" />
+            <Verifier />
+            <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)] mb-10" />
+          </>
+        )}
 
         {steps.map((item: any, index: number) => (
           <AccordionItem

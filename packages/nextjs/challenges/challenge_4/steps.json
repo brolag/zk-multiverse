@@ -1,9 +1,11 @@
-[
+{
+  "title": "Challenge 4 title",
+  "steps": [
     {
       "step": "Step 1",
       "description": ["Create the circuit in Circom (Knightsknaves.circom)"],
       "commands": [""],
-      "files":["../../../../package/circuits/KnightsKnaves.circom"]
+      "files": ["../../../../package/circuits/KnightsKnaves.circom"]
     },
     {
       "step": "Step 2",
@@ -13,23 +15,33 @@
     {
       "step": "Step 3",
       "description": "These commands initialize and contribute to the Powers of Tau ceremony, which is essential for setting up zk-SNARKs. The first command starts the ceremony, the second adds a contribution, and the third prepares the final output for use in zk-SNARK proving and verification.",
-      "commands": ["snarkjs powersoftau new bn128 12 pot12_0000.ptau -v", "snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name='First contribution' -v", "snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v"]
+      "commands": [
+        "snarkjs powersoftau new bn128 12 pot12_0000.ptau -v",
+        "snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name='First contribution' -v",
+        "snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v"
+      ]
     },
     {
       "step": "Step 4",
       "description": "These commands set up and finalize the zk-SNARK proving and verification keys. The first command initializes the setup using the circuit and Powers of Tau files, the second command exports the verification key for use in verifying proofs.",
-      "commands": ["snarkjs plonk setup knightsknaves.r1cs pot12_final.ptau knightsknaves_0000.zkey", "snarkjs zkey export verificationkey knightsknaves_0000.zkey verification_key.json"]
+      "commands": [
+        "snarkjs plonk setup knightsknaves.r1cs pot12_final.ptau knightsknaves_0000.zkey",
+        "snarkjs zkey export verificationkey knightsknaves_0000.zkey verification_key.json"
+      ]
     },
     {
       "step": "Step 5",
       "description": "Create an HTML file named index, and enter the selected values for character A and character B.",
       "commands": [""],
-      "files":"index.html"
+      "files": "index.html"
     },
     {
       "step": "Step 6",
-      "description": ["Create a JavaScript file that receives the selected values and performs the test verification.."],
+      "description": [
+        "Create a JavaScript file that receives the selected values and performs the test verification.."
+      ],
       "commands": [""],
-      "files":"verifyProofPlonk.js"      
+      "files": "verifyProofPlonk.js"
     }
   ]
+}

@@ -38,3 +38,24 @@ p {
 .grayscale {
   filter: grayscale(100%);
 }
+
+.glow-button {
+  background-color: #1e3a8a; 
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #3b82f6, 0 0 15px #3b82f6, 0 0 20px #3b82f6, 0 0 20px #3b82f6; 
+}
+
+.glow-button:hover {
+  background-color: #2563eb; /* Lighter blue on hover */
+  box-shadow: 0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 40px #60a5fa, 0 0 80px #60a5fa; 
+}
+
+.glow-button:focus {
+  outline: none;
+}
