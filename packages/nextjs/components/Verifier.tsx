@@ -2,18 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { generateAndVerifyProof } from "~~/utils/generateAndVerifyProof";
 
 function Verifier() {
-  const [characterA, setCharacterA] = useState("Knight");
-  const [characterB, setCharacterB] = useState("Knight");
+  const [characterA, setCharacterA] = useState(0);
+  const [characterB, setCharacterB] = useState(0);
   const [result, setResult] = useState("No proof yet");
 
-  const verify = () => {
-    if (characterA === "Knight" && characterB === "Knave") {
-      setResult("Valid proof");
-    } else {
-      setResult("Invalid proof");
-    }
+  const verify = async () => {
+    const result = (await generateAndVerifyProof(characterA, characterB)) ? "Valid proof" : "Invalid proof";
+    setResult(result);
   };
 
   return (
@@ -24,10 +22,10 @@ function Verifier() {
           <select
             className="bg-gray-700 text-white p-2 rounded"
             value={characterA}
-            onChange={e => setCharacterA(e.target.value)}
+            onChange={e => setCharacterA(parseInt(e.target.value))}
           >
-            <option value="Knight">Knight</option>
-            <option value="Knave">Knave</option>
+            <option value={1}>Knight</option>
+            <option value={0}>Knave</option>
           </select>
         </div>
         <div className="flex items-center">
@@ -35,10 +33,10 @@ function Verifier() {
           <select
             className="bg-gray-700 text-white p-2 rounded"
             value={characterB}
-            onChange={e => setCharacterB(e.target.value)}
+            onChange={e => setCharacterB(parseInt(e.target.value))}
           >
-            <option value="Knight">Knight</option>
-            <option value="Knave">Knave</option>
+            <option value={1}>Knight</option>
+            <option value={0}>Knave</option>
           </select>
         </div>
       </div>
