@@ -86,12 +86,6 @@ We welcome contributions! Whether you’re adding new challenges, improving the 
 
 3. **Submit a Pull Request**: Once your feature is complete, submit a pull request for review.
 
-## **Feedback and Support**
-
-Have questions or need help? Join our [community forum](https://example.com) or open an issue on GitHub.
-
-## **Documentation**
-
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2, the toolkit used to build ZK Multiverse.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
+## Pitch for the PSE Core Program 2024 - Costa Rica 🇨🇷 
+[Video](https://www.loom.com/share/f6961049907b4f10b149df42eacd4a40?sid=dc8f2f4c-773f-4cb3-9ac6-df4ff836ff7d)
+[Slides](https://www.canva.com/design/DAGNSkTbrtw/Pp1TeE76rElZmpQ480X82w/edit?utm_content=DAGNSkTbrtw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
