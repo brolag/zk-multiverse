@@ -1,5 +1,5 @@
 
-# **🚀ZK Multiverse: Embark on a Cryptographic Adventure🚀** 
+# **ZK Multiverse: Embark on a Cryptographic Adventure** 
 
 ![image](https://github.com/user-attachments/assets/be31349b-4a16-48c1-a91a-787b8ef9aab4)
 
