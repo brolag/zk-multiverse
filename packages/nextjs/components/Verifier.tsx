@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 function Verifier() {
   const [characterA, setCharacterA] = useState("Knight");
@@ -19,7 +20,7 @@ function Verifier() {
     <div className="grid grid-cols-3 items-center p-4 bg-gray-800 rounded-lg font-play gap-4">
       <div className="flex flex-col space-y-4">
         <div className="flex items-center">
-          <img src="/images/user.png" alt="User Icon" className="w-6 h-6 mr-2" />
+          <Image src="/images/user.png" alt="User Icon" width={24} height={24} className="mr-2" />
           <select
             className="bg-gray-700 text-white p-2 rounded"
             value={characterA}
@@ -30,7 +31,7 @@ function Verifier() {
           </select>
         </div>
         <div className="flex items-center">
-          <img src="/images/user.png" alt="User Icon" className="w-6 h-6 mr-2" />
+          <Image src="/images/user.png" alt="User Icon" width={24} height={24} className="mr-2" />
           <select
             className="bg-gray-700 text-white p-2 rounded"
             value={characterB}
@@ -46,7 +47,7 @@ function Verifier() {
           className="glow-button bg-black text-blue-400 flex items-center justify-center p-2 rounded"
           onClick={verify}
         >
-          <img src="/images/play.png" alt="Play Icon" className="w-4 h-4 mr-2" />
+          <Image src="/images/play.png" alt="Play Icon" width={16} height={16} className="mr-2" />
           Verify
         </button>
       </div>
