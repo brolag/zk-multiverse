@@ -36,42 +36,41 @@ To get started with ZK Multiverse, follow the steps below:
 
 1. **Clone the Repository**: Begin your journey by cloning this repository to your local machine.
 
-   '''bash
+   ```bash
    git clone https://github.com/yourusername/zk-multiverse.git
    cd zk-multiverse
    '''
 
 2. **Install Dependencies**: Install the required dependencies to run the game.
 
-   '''bash
+   ```bash
    yarn install
-   '''
+   ```
 
 3. **Run a Local Network**: Start a local Ethereum network using Hardhat in the first terminal.
 
-   '''bash
-   yarn chain
-   '''
+   ```bash
+   yarn chain```
 
 4. **Deploy the Test Contract**: Deploy a test smart contract to the local network in a second terminal.
 
-   '''bash
+   ```bash
    yarn deploy
-   '''
+   ```
 
 5. **Start Your NextJS App**: Launch the NextJS app in a third terminal.
 
-   '''bash
+   ```bash
    yarn start
-   '''
+   ```
 
    Visit your app on: \`http://localhost:3000\`. You can interact with your smart contract using the \`Debug Contracts\` page.
 
 6. **Run Smart Contract Tests**: Test your smart contracts using Hardhat.
 
-  '''bash
+  ```bash
    yarn hardhat:test
-  '''
+  ```
 
 ## **Contributing**
 
@@ -81,9 +80,9 @@ We welcome contributions! Whether you’re adding new challenges, improving the 
 
 2. **Create a Feature Branch**: Work on your feature in a new branch.
 
-  '''bash
+```bash
    git checkout -b feature-name
-  '''
+  ```
 
 3. **Submit a Pull Request**: Once your feature is complete, submit a pull request for review.
 
