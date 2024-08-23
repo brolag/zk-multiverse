@@ -1,86 +1,134 @@
-# Welcome to Scaffold-ETH 2 Contributing Guide
+# Contributing to ZK Multiverse
 
-Thank you for investing your time in contributing to Scaffold-ETH 2!
+Welcome to ZK Multiverse! We’re excited to have you on board and can’t wait to see what you’ll bring to this project. Whether you're here to suggest new features, fix bugs, or contribute code, this guide will help you get started.
 
-This guide aims to provide an overview of the contribution workflow to help us make the contribution process effective for everyone involved.
+## Code of Conduct
 
-## About the Project
+By participating in this project, you agree to abide by our Code of Conduct. Please read it to understand the expectations we have for contributors.
 
-Scaffold-ETH 2 is a minimal and forkable repo providing builders with a starter kit to build decentralized applications on Ethereum.
+## Getting Started
 
-Read the [README](README.md) to get an overview of the project.
+### 1. Fork the Repository
 
-### Vision
+Start by creating your own fork of the ZK Multiverse repository. This will allow you to make changes without affecting the original project.
 
-The goal of Scaffold-ETH 2 is to provide the primary building blocks for a decentralized application.
+```bash
+bashCopiar código
+git clone https://github.com/yourusername/zk-multiverse.git
+cd zk-multiverse
 
-The repo can be forked to include integrations and more features, but we want to keep the master branch simple and minimal.
+```
 
-### Project Status
+### 2. Create a New Branch
 
-The project is under active development.
+Before starting work on a new feature or bug fix, create a new branch. This helps keep your changes organized and makes it easier to submit a pull request later.
 
-You can view the open Issues, follow the development process and contribute to the project.
+```bash
+bashCopiar código
+git checkout -b feature-name
 
-## Getting started
+```
 
-You can contribute to this repo in many ways:
+### 3. Install Dependencies
 
-- Solve open issues
-- Report bugs or feature requests
-- Improve the documentation
+Make sure you have all the necessary dependencies installed to run the project locally.
 
-Contributions are made via Issues and Pull Requests (PRs). A few general guidelines for contributions:
+```bash
+bashCopiar código
+yarn install
 
-- Search for existing Issues and PRs before creating your own.
-- Contributions should only fix/add the functionality in the issue OR address style issues, not both.
-- If you're running into an error, please give context. Explain what you're trying to do and how to reproduce the error.
-- Please use the same formatting in the code repository. You can configure your IDE to do it by using the prettier / linting config files included in each package.
-- If applicable, please edit the README.md file to reflect the changes.
+```
 
-### Issues
+### 4. Run the Project Locally
 
-Issues should be used to report problems, request a new feature, or discuss potential changes before a PR is created.
+ZK Multiverse is a complex project that involves multiple components. Follow these steps to get it running locally:
 
-#### Solve an issue
+1. **Start a Local Ethereum Network**
+    
+    Open a terminal and run:
+    
+    ```bash
+    bashCopiar código
+    yarn chain
+    
+    ```
+    
+2. **Deploy the Test Contract**
+    
+    In a second terminal, deploy a test smart contract:
+    
+    ```bash
+    bashCopiar código
+    yarn deploy
+    
+    ```
+    
+3. **Launch the NextJS App**
+    
+    Finally, in a third terminal, start the NextJS app:
+    
+    ```bash
+    bashCopiar código
+    yarn start
+    
+    ```
+    
+    Visit your app at `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page.
+    
 
-Scan through our [existing issues](https://github.com/scaffold-eth/scaffold-eth-2/issues) to find one that interests you.
+### 5. Test Your Changes
 
-If a contributor is working on the issue, they will be assigned to the individual. If you find an issue to work on, you are welcome to assign it to yourself and open a PR with a fix for it.
+Before submitting your changes, run the existing tests or add new ones to ensure that everything works as expected.
 
-#### Create a new issue
+```bash
+bashCopiar código
+yarn hardhat:test
 
-If a related issue doesn't exist, you can open a new issue.
+```
 
-Some tips to follow when you are creating an issue:
+## Making Changes
 
-- Provide as much context as possible. Over-communicate to give the most details to the reader.
-- Include the steps to reproduce the issue or the reason for adding the feature.
-- Screenshots, videos etc., are highly appreciated.
+### Feature Requests and Bug Fixes
 
-### Pull Requests
+We welcome all types of contributions. Here’s how you can contribute effectively:
 
-#### Pull Request Process
+1. **Open an Issue**: Before you start working on a significant change, open an issue to discuss the proposed feature or bug fix. This helps ensure that your work aligns with the project’s goals and avoids duplicate efforts.
+2. **Discuss Your Approach**: Share your plan for implementing the feature or fixing the bug. Feedback from maintainers or other contributors can help improve your approach.
 
-We follow the ["fork-and-pull" Git workflow](https://github.com/susam/gitpr)
+### Coding Guidelines
 
-1. Fork the repo
-2. Clone the project
-3. Create a new branch with a descriptive name
-4. Commit your changes to the new branch
-5. Push changes to your fork
-6. Open a PR in our repository and tag one of the maintainers to review your PR
+- **Follow the Project Structure**: Maintain the project’s existing structure and organization. Consistent code is easier to maintain and understand.
+- **Write Clear and Concise Code**: Use meaningful variable names, and add comments where necessary. Aim for simplicity and clarity.
+- **Commit Messages**: Write descriptive commit messages that explain the "what" and "why" of your changes.
 
-Here are some tips for a high-quality pull request:
+### Submitting a Pull Request
 
-- Create a title for the PR that accurately defines the work done.
-- Structure the description neatly to make it easy to consume by the readers. For example, you can include bullet points and screenshots instead of having one large paragraph.
-- Add the link to the issue if applicable.
-- Have a good commit message that summarises the work done.
+1. **Push Your Changes**: After committing your changes, push them to your fork.
+    
+    ```bash
+    bashCopiar código
+    git push origin feature-name
+    
+    ```
+    
+2. **Open a Pull Request**: Navigate to the original repository on GitHub and open a pull request from your branch. Provide a clear and descriptive title and explain your changes in detail.
+3. **Request a Review**: Tag one of the maintainers to review your pull request. Be open to feedback and make any necessary changes.
 
-Once you submit your PR:
+### Reviewing and Merging
 
-- We may ask questions, request additional information or ask for changes to be made before a PR can be merged. Please note that these are to make the PR clear for everyone involved and aims to create a frictionless interaction process.
-- As you update your PR and apply changes, mark each conversation resolved.
+- **Code Review**: All pull requests are subject to review by maintainers. They will check for code quality, adherence to guidelines, and overall fit with the project.
+- **Merge Process**: Once approved, your pull request will be merged into the main branch. In some cases, maintainers may request additional changes before merging.
 
-Once the PR is approved, we'll "squash-and-merge" to keep the git commit history clean.
+## Contributing Beyond Code
+
+Contributions aren’t limited to code! You can also:
+
+- **Create or Update Documentation**: Help others by improving or adding to the project documentation.
+- **Design New Challenges**: Contribute by designing new cryptographic challenges or puzzles for the game.
+- **Report Bugs**: If you find a bug, report it by opening an issue. Provide as much detail as possible, including steps to reproduce the issue.
+
+## Need Help?
+
+If you have any questions or need help getting started, feel free to open an issue.
+
+Thank you for contributing to ZK Multiverse!
