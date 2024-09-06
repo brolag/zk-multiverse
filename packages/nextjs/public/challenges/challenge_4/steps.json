@@ -1,11 +1,11 @@
 {
-  "title": "Challenge 4 title",
+  "title": "Knights and Knaves - Plonk",
   "steps": [
     {
       "step": "Step 1",
       "description": ["Create the circuit in Circom (Knightsknaves.circom)"],
       "commands": [""],
-      "files": ["../../../../package/circuits/KnightsKnaves.circom"]
+      "files": ["KnightsKnaves.circom"]
     },
     {
       "step": "Step 2",
