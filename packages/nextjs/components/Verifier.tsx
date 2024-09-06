@@ -2,16 +2,25 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { generateAndVerifyProof } from "~~/utils/generateAndVerifyProof";
+import { generateAndVerifyProof2, generateAndVerifyProof4 } from "~~/utils/generateAndVerifyProof";
 
-function Verifier() {
+type VerifierProps = {
+  challengeId: string;
+};
+
+function Verifier({ challengeId }: VerifierProps) {
   const [characterA, setCharacterA] = useState(0);
   const [characterB, setCharacterB] = useState(0);
   const [result, setResult] = useState("No proof yet");
 
   const verify = async () => {
-    const result = (await generateAndVerifyProof(characterA, characterB)) ? "Valid proof" : "Invalid proof";
-    setResult(result);
+    if (challengeId == "2") {
+      const result = (await generateAndVerifyProof2(characterA, characterB)) ? "Valid proof" : "Invalid proof";
+      setResult(result);
+    } else if (challengeId == "4") {
+      const result = (await generateAndVerifyProof4(characterA, characterB)) ? "Valid proof" : "Invalid proof";
+      setResult(result);
+    }
   };
 
   return (

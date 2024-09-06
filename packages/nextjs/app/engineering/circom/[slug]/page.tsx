@@ -26,9 +26,9 @@ export default async function Page({ params }: PageProps) {
 
         {params.slug !== "1" && (
           <>
-            <Statement />
+            <Statement challengeId={challengeId} />
             <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)]" />
-            <Verifier />
+            <Verifier challengeId={challengeId} />
             <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)] mb-10" />
           </>
         )}

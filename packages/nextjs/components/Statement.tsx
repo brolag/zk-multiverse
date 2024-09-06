@@ -1,19 +1,29 @@
-const Statement = () => {
-  return (
-    <div className="w-full max-w-[64rem] p-4 bg-gray-700 rounded-lg mb-6 font-play shadow-lg">
-      <div className="mb-4">
-        <h3 className="text-white text-xl font-bold">Statements</h3>
-        <ul className="text-gray-300">
-          <li>- Knights always tell the truth.</li>
-          <li>- Knaves always lie.</li>
-        </ul>
-      </div>
-      <div className="mb-4">
-        <p className="text-gray-300">Character A: B is a knave.</p>
-        <p className="text-gray-300">Character B: A and I are of opposite types.</p>
-      </div>
-    </div>
-  );
+import React from "react";
+// Import the statement for every challenge
+import Challenge2Content from "../public/challenges/challenge_2/statement";
+import Challenge4Content from "../public/challenges/challenge_4/statement";
+
+type StatementProps = {
+  challengeId: string;
+};
+
+const NotFoundContent = () => <p>Challenge not found</p>;
+
+const Statement = ({ challengeId }: StatementProps) => {
+  let ChallengeContent;
+
+  switch (challengeId) {
+    case "2":
+      ChallengeContent = Challenge2Content;
+      break;
+    case "4":
+      ChallengeContent = Challenge4Content;
+      break;
+    default:
+      ChallengeContent = NotFoundContent;
+  }
+
+  return <ChallengeContent />;
 };
 
 export default Statement;
