@@ -1,11 +1,11 @@
 {
-  "title": "Knights and Knaves",
+  "title": "Knights and Knaves - Groth16",
   "steps": [
     {
       "step": "Step 1",
       "description": ["Create the circuit in Circom (Knightsknaves.circom)"],
       "commands": [""],
-      "files": [""]
+      "files": "KnightsKnaves.circom"
     },
     {
       "step": "Step 2",
@@ -34,7 +34,7 @@
       "step": "Step 5",
       "description": "Create an input file named input.json, containing the inputs required for your circuit. This file should be in JSON format.",
       "commands": [""],
-      "files": ["input.json", ""]
+      "files": "input.json"
     },
     {
       "step": "Step 6",
