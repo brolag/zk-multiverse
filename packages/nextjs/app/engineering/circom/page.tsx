@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <div key={rowIndex} className="flex flex-row items-center mb-8">
             {row.map((step, index) => {
               // TODO: Implement the logic to lock the challenges
-              const isLocked = step.id > 2;
+              const isLocked = step.id > 2 && step.id !== 4;
               const content = (
                 <div className={`flex flex-col items-center mx-4 ${isLocked ? "opacity-50" : ""} group`}>
                   <div className="flex flex-col items-center">
