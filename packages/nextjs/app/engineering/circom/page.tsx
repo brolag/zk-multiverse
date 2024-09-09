@@ -7,12 +7,12 @@ import type { NextPage } from "next";
 import { chunkArray } from "~~/utils/chunkArray";
 
 const challenges = [
-  { id: 1, title: "Challenge #1" },
-  { id: 2, title: "Challenge #2" },
-  { id: 3, title: "Challenge #3" },
-  { id: 4, title: "Challenge #4" },
-  { id: 5, title: "Challenge #5" },
-  { id: 6, title: "Challenge #6" },
+  { id: 1, title: "Challenge #1", isLocked: false },
+  { id: 2, title: "Challenge #2", isLocked: false },
+  { id: 3, title: "Challenge #3", isLocked: true },
+  { id: 4, title: "Challenge #4", isLocked: false },
+  { id: 5, title: "Challenge #5", isLocked: true },
+  { id: 6, title: "Challenge #6", isLocked: true },
 ];
 
 const Home: NextPage = () => {
@@ -25,16 +25,14 @@ const Home: NextPage = () => {
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex flex-row items-center mb-8">
             {row.map((step, index) => {
-              // TODO: Implement the logic to lock the challenges
-              const isLocked = step.id > 2 && step.id !== 4;
               const content = (
-                <div className={`flex flex-col items-center mx-4 ${isLocked ? "opacity-50" : ""} group`}>
+                <div className={`flex flex-col items-center mx-4 ${step.isLocked ? "opacity-50" : ""} group`}>
                   <div className="flex flex-col items-center">
                     <div
-                      className={`flex flex-row text-center items-center font-play text-3xl cursor-pointer ${!isLocked && "group-hover:glow-title"}`}
+                      className={`flex flex-row text-center items-center font-play text-3xl cursor-pointer ${!step.isLocked && "group-hover:glow-title"}`}
                     >
                       {step.title}
-                      {isLocked && (
+                      {step.isLocked && (
                         <Image
                           src="/images/locked.png"
                           alt="Locked"
@@ -46,7 +44,7 @@ const Home: NextPage = () => {
                     </div>
                     <div
                       style={{ backgroundImage: "url(/images/step.png)" }}
-                      className={`bg-local flex flex-row justify-around items-start w-40 h-40 bg-cover ${isLocked ? "grayscale" : "transition-transform duration-300 group-hover:scale-105"}`}
+                      className={`bg-local flex flex-row justify-around items-start w-40 h-40 bg-cover ${step.isLocked ? "grayscale" : "transition-transform duration-300 group-hover:scale-105"}`}
                     />
                   </div>
                 </div>
@@ -54,7 +52,7 @@ const Home: NextPage = () => {
 
               return (
                 <Fragment key={step.id}>
-                  {isLocked ? (
+                  {step.isLocked ? (
                     content
                   ) : (
                     <Link href={`/engineering/circom/${step.id}`} passHref>
