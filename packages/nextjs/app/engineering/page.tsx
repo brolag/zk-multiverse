@@ -16,7 +16,7 @@ const languages = [
     title: "Noir",
     image: "/images/languages/noir.png",
     link: "/engineering/noir",
-    locked: true,
+    locked: false,
   },
   {
     title: "Python",
