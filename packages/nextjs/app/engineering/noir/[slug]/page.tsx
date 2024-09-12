@@ -11,7 +11,7 @@ type PageProps = {
 };
 
 export default async function Page({ params }: PageProps) {
-  const { title, steps } = await getSteps(params.slug, "circom");
+  const { title, steps } = await getSteps(params.slug, "noir");
   const challengeId = params.slug;
 
   return (
@@ -26,7 +26,7 @@ export default async function Page({ params }: PageProps) {
 
         {params.slug !== "1" && (
           <>
-            <Statement challengeId={challengeId} lang={"circom"} />
+            <Statement challengeId={challengeId} lang={"noir"} />
             <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)]" />
             <Verifier challengeId={challengeId} />
             <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)] mb-10" />
@@ -45,10 +45,7 @@ export default async function Page({ params }: PageProps) {
                 <p>{item.description}</p>
                 <pre>{item.commands.join("\n")}</pre>
                 {item.files && (
-                  <a
-                    href={`/challenges/circom/challenge_${challengeId}/files/${item.files}`}
-                    download={`${item.files}`}
-                  >
+                  <a href={`/challenges/noir/challenge_${challengeId}/files/${item.files}`} download={`${item.files}`}>
                     Download: {item.files}
                   </a>
                 )}

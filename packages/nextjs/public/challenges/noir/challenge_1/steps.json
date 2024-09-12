@@ -1,0 +1,35 @@
+{
+    "title": "Noir installation",
+    "steps": [
+      {
+        "step": "Step 1 - Install Rust",
+        "description": ["Noir is built using Rust, so you need to install Rust first. Run the following command to install Rust:"],
+        "commands": ["curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"]
+      },
+      {
+        "step": "Step 2",
+        "description": "After installation, you need to add Rust to your PATH by running:",
+        "commands": ["gsource $HOME/.cargo/env"]
+      },
+      {
+        "step": "Step 3",
+        "description": "Verify that Rust is installed correctly by checking its version:",
+        "commands": ["rustc --version"]
+      },
+      {
+        "step": "Step 4 - Install Noir",
+        "description": "With Rust installed, you can now install Noir using Cargo, the Rust package manager. To install the Noir version manager (noirup), run:",
+        "commands": ["cargo install noirup"]
+      },
+      {
+        "step": "Step 5",
+        "description": "This installs the version manager, noirup, which helps you install and manage versions of Noir. To install the latest version of Noir, run:",
+        "commands": ["noirup install"]
+      },
+      {
+        "step": "Step 6 - Create a New Noir Project",
+        "description": "Once Noir is installed, you can create a new project to start writing zk-SNARK circuits. To initialize a new Noir project inside a directory, use this command:",
+        "commands": ["nargo init"]
+      }
+    ]
+  }
