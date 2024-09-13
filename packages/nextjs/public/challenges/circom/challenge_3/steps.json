@@ -1,11 +1,11 @@
 {
-  "title": "Challenge 3 Title",
+  "title": "Knights and Knaves on-chain",
   "steps": [
     {
       "step": "Step 1",
       "description": ["Create the circuit in Circom (Knightsknaves.circom)"],
       "commands": [""],
-      "files": ["../../../../package/circuits/KnightsKnaves.circom"]
+      "files": "KnightsKnaves.circom"
     },
     {
       "step": "Step 2",
@@ -48,9 +48,15 @@
     },
     {
       "step": "Step 8",
+      "description": "Copy the ABI of the contract you just created. Create a file named abi.json and paste the ABI code you copied into it.",
+      "commands": [""],
+      "files": "abi.json"
+    },    
+    {
+      "step": "Step 9",
       "description": "Create a Javascript file to call the custom smart contract and verify the proof.",
       "commands": [""],
-      "files": ""
+      "files": "custom.js"
     }
   ]
   

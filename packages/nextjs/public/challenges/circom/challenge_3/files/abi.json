@@ -1,0 +1,54 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256[2]",
+				"name": "_pA",
+				"type": "uint256[2]"
+			},
+			{
+				"internalType": "uint256[2][2]",
+				"name": "_pB",
+				"type": "uint256[2][2]"
+			},
+			{
+				"internalType": "uint256[2]",
+				"name": "_pC",
+				"type": "uint256[2]"
+			},
+			{
+				"internalType": "uint256[1]",
+				"name": "_pubSignals",
+				"type": "uint256[1]"
+			}
+		],
+		"name": "sendProof",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "circomVeriferAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "publicInput",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

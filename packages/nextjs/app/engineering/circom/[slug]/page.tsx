@@ -28,8 +28,13 @@ export default async function Page({ params }: PageProps) {
           <>
             <Statement challengeId={challengeId} lang={"circom"} />
             <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)]" />
-            <Verifier challengeId={challengeId} />
-            <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)] mb-10" />
+
+            {["2", "3", "4"].includes(params.slug) && (
+              <>
+                <Verifier challengeId={challengeId} />
+                <hr className="border-0 h-px bg-blue-500 shadow-[0_0_10px_2px_rgba(59,130,246,0.7)] mb-10" />
+              </>
+            )}
           </>
         )}
 

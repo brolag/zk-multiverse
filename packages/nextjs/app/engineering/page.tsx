@@ -22,7 +22,7 @@ const languages = [
     title: "Python",
     image: "/images/languages/python.png",
     link: "/engineering/python",
-    locked: false,
+    locked: true,
   },
 ];
 
