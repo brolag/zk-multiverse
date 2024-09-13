@@ -2,7 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { generateAndVerifyProof2, generateAndVerifyProof4 } from "~~/utils/generateAndVerifyProof";
+import {
+  generateAndVerifyProof2,
+  generateAndVerifyProof3,
+  generateAndVerifyProof4,
+} from "~~/utils/generateAndVerifyProof";
 
 type VerifierProps = {
   challengeId: string;
@@ -16,6 +20,9 @@ function Verifier({ challengeId }: VerifierProps) {
   const verify = async () => {
     if (challengeId == "2") {
       const result = (await generateAndVerifyProof2(characterA, characterB)) ? "Valid proof" : "Invalid proof";
+      setResult(result);
+    } else if (challengeId == "3") {
+      const result = (await generateAndVerifyProof3(characterA, characterB)) ? "Valid proof" : "Invalid proof";
       setResult(result);
     } else if (challengeId == "4") {
       const result = (await generateAndVerifyProof4(characterA, characterB)) ? "Valid proof" : "Invalid proof";

@@ -1,0 +1,58 @@
+{
+  "title": "Sudoku",
+  "steps": [
+    {
+      "step": "Step 1",
+      "description": [
+        "Start by creating a file for the Sudoku circuit in Circom. This circuit will verify if a Sudoku solution is valid by checking the rows, columns, and subgrids."
+      ],
+      "commands": [],
+      "files": "sudoku.circom"
+    },
+    {
+      "step": "Step 2",
+      "description": [
+        "Include the necessary Circom libraries, such as comparators and logic gates, which will allow you to verify conditions within the circuit."
+      ],
+      "commands": [
+        "include \"../node_modules/circomlib/circuits/comparators.circom\";",
+        "include \"../node_modules/circomlib/circuits/gates.circom\";"
+      ]
+    },
+    {
+      "step": "Step 3",
+      "description": [
+        "Define an `InRange` template to check if a value is within a specific range (for example, between 1 and 9 for Sudoku). Use Circom components like `LessEqThan` and `GreaterEqThan`."
+      ],
+      "commands": []
+    },
+    {
+      "step": "Step 4",
+      "description": [
+        "Create a `ContainsAll` template, which will validate whether a row, column, or subgrid contains all numbers from 1 to 9 without repetition."
+      ],
+      "commands": []
+    },
+    {
+      "step": "Step 5",
+      "description": [
+        "Define the main `Main` template, which will take the solved and unsolved Sudoku grids and apply the validations you have defined in the previous templates to ensure the solution is valid."
+      ],
+      "commands": []
+    },
+    {
+      "step": "Step 6",
+      "description": [
+        "In this `Main` template, add the checks for the rows, columns, and subgrids. Use the `ContainsAll` template to ensure that each of these sections contains all the numbers without repetition."
+      ],
+      "commands": []
+    },
+    {
+      "step": "Step 7",
+      "description": [
+        "Finally, validate that the solved grid matches the unsolved grid in the cells with predefined values, and ensure that the solution adheres to the rules of Sudoku."
+      ],
+      "commands": []
+    }
+  ]
+}

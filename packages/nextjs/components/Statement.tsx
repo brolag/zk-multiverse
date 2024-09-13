@@ -24,11 +24,35 @@ const Statement = ({ challengeId, lang }: StatementProps) => {
                 );
                 setChallengeContent(() => Challenge2Content);
                 break;
+              case "3":
+                const { default: Challenge3Content } = await import(
+                  "../public/challenges/circom/challenge_3/statement"
+                );
+                setChallengeContent(() => Challenge3Content);
+                break;
               case "4":
                 const { default: Challenge4Content } = await import(
                   "../public/challenges/circom/challenge_4/statement"
                 );
                 setChallengeContent(() => Challenge4Content);
+                break;
+              case "5":
+                const { default: Challenge5Content } = await import(
+                  "../public/challenges/circom/challenge_5/statement"
+                );
+                setChallengeContent(() => Challenge5Content);
+                break;
+              case "6":
+                const { default: Challenge6Content } = await import(
+                  "../public/challenges/circom/challenge_6/statement"
+                );
+                setChallengeContent(() => Challenge6Content);
+                break;
+              case "7":
+                const { default: Challenge7Content } = await import(
+                  "../public/challenges/circom/challenge_7/statement"
+                );
+                setChallengeContent(() => Challenge7Content);
                 break;
               default:
                 setChallengeContent(() => NotFoundContent);

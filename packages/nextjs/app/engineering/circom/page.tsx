@@ -9,10 +9,13 @@ import { chunkArray } from "~~/utils/chunkArray";
 const challenges = [
   { id: 1, title: "Challenge #1", isLocked: false },
   { id: 2, title: "Challenge #2", isLocked: false },
-  { id: 3, title: "Challenge #3", isLocked: true },
+  { id: 3, title: "Challenge #3", isLocked: false },
   { id: 4, title: "Challenge #4", isLocked: false },
-  { id: 5, title: "Challenge #5", isLocked: true },
-  { id: 6, title: "Challenge #6", isLocked: true },
+  { id: 5, title: "Challenge #5", isLocked: false },
+  { id: 6, title: "Challenge #6", isLocked: false },
+  { id: 7, title: "Challenge #7", isLocked: false },
+  { id: 8, title: "Challenge #8", isLocked: true },
+  { id: 9, title: "Challenge #9", isLocked: true },
 ];
 
 const Home: NextPage = () => {

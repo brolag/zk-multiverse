@@ -1,0 +1,70 @@
+{
+"title": "Magic Square",
+"steps": [
+    {
+    "step": "Step 1",
+    "description": [
+        "Create the MagicSquare circuit in Circom. The circuit is designed to check if the given n x n matrix satisfies the magic square property, meaning all rows, columns, and diagonals must sum to the same value."
+    ],
+    "commands": [""],
+    "files": "MagicSquare.circom"
+    },
+    {
+    "step": "Step 2",
+    "description": "Initialize the diagonal sums (top-left to bottom-right and bottom-left to top-right). This step loops through the matrix and sums the elements along the diagonals.",
+    "commands": [
+        "var diags[2];",
+        "diags[0] = 0;",
+        "diags[1] = 0;",
+        "for (var d = 0; d < n; d++) {",
+        "  diags[0] += in[d][d];",
+        "  diags[1] += in[n-1-d][d];",
+        "}"
+    ]
+    },
+    {
+    "step": "Step 3",
+    "description": "Enforce the sum for diagonals. This step checks if the diagonal sums match the expected sum.",
+    "commands": [
+        "sum === diags[0];",
+        "sum === diags[1];"
+    ]
+    },
+    {
+    "step": "Step 4",
+    "description": "Calculate and enforce the sum for each row. The circuit loops through each row of the matrix, adds the elements, and checks if the row sum equals the expected sum.",
+    "commands": [
+        "var rowsums[n];",
+        "for (var i = 0; i < n; i++) {",
+        "  rowsums[i] = 0;",
+        "  for (var j = 0; j < n; j++) {",
+        "    rowsums[i] += in[i][j];",
+        "  }",
+        "  sum === rowsums[i];",
+        "}"
+    ]
+    },
+    {
+    "step": "Step 5",
+    "description": "Calculate and enforce the sum for each column. The circuit loops through each column, adds the elements, and ensures the column sum equals the expected sum.",
+    "commands": [
+        "var colsums[n];",
+        "for (var j = 0; j < n; j++) {",
+        "  colsums[j] = 0;",
+        "  for (var i = 0; i < n; i++) {",
+        "    colsums[j] += in[i][j];",
+        "  }",
+        "  sum === colsums[j];",
+        "}"
+    ]
+    },
+    {
+    "step": "Step 6",
+    "description": "Define the main component. Here, the main component is set to run the MagicSquare circuit with size n = 2.",
+    "commands": [
+        "component main = MagicSquare(n);"
+    ]
+    }
+]
+}
+  
